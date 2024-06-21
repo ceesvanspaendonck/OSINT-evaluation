@@ -19,8 +19,9 @@ The tool makes use of the following procedures:
 - Evaluate posts per thread  
 - Dump result
 
-![tool_process](https://github.com/ceesvanspaendonck/OSINT-evaluation/assets/10400578/d5fe478d-bed6-4895-ba58-d6c25422741c)
-*This diagram is incomplete*  
+*Schematic overview of main processes:*
+![tool_process_v2](https://github.com/ceesvanspaendonck/OSINT-evaluation/assets/10400578/a8702c72-d4bf-4962-9e48-56d97d8535e7)
+
 Note: the daily limit of search queries on a Programmable Search Engine is fairly limited. Therefore, users that produce no results are now added to a blacklist file (created in local_data) in order to avoid multiple attempts to search for users that produce no results. This approach is still under consideration and might change in the future.  
 ## Prerequisites
 ### Requirements
