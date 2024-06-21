@@ -79,6 +79,5 @@ def main():
 		evaluate(args.input, keys, instructions, args.force_scrape,
 											 	 args.skip_scrape,
 												 args.skip_evaluation)
-
 if __name__ == '__main__':
 	main()

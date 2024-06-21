@@ -37,6 +37,7 @@ def evaluate_user(user, keys, instructions):
 			# add result to user_evaluations if in JSON format
 			try:
 				result = json.loads(result)
+				result['thread'] = thread_id
 				user_evaluations.append(result)
 			except:
 				print(f'{user}: evaluation of {thread_id} is not saved as the response is not structured in JSON format. please check /secrets/instructions.txt')
