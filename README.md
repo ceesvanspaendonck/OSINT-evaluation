@@ -1,26 +1,26 @@
 # OSINT-evaluation
-Trust in OSINT [provisionary title]  
-University of Amsterdam  
-12425001  
-MA Thesis (New Media and Digital Culture)
-June 2024  
+Finding trust in OSINT  
 Cees van Spaendonck  
+12425001  
+New Media and Digital Culture  
+University of Amsterdam  
+Master's Thesis  
 
-This tool allows researchers to automatically search for and scrape X/Twitter threads hosted on Threadreaderapp.com that in turn are sent to OpenAI's GPT for evaluation based on custom instructions. In the context of this thesis, this is done with the goal of evaluating the trustworthiness of OSINT investigations - but this tool can be used with other purposes of social media analysis as well based on the custom instructions (e.g. sentiment analysis, event tracking, misinformation detection). 
+This tool allows researchers to automatically search for and scrape X/Twitter threads hosted on Threadreaderapp.com that in turn are sent to OpenAI's GPT for evaluation on any topic based on custom instructions. In the context of this thesis, this is done with the goal of evaluating the trustworthiness of OSINT investigations - but this tool can be used with other purposes of social media analysis as well based on the custom instructions (e.g. sentiment analysis, event tracking, misinformation detection). 
 
-Please note that this tool is still being developed. No guarantees can be made regarding its success or safety.  
+Please note that although this is the current final version of the tool, no guarantees can be made regarding its success or safety.  
 For questions or bugs or anything else, please send an email to cees.vanspaendonck ***[at]*** student.uva.nl
 
 The tool makes use of the following procedures:
 - Run main script with username or Threadreader URL as input *(detailed below)*  
-- Search for threads of this user on Threadreader in Programmable Google Search Engine  
+- Search for threads of this user on Threadreader in a Programmable Search Engine hosted by Google  
 - Scrape and save thread URLs  
 - Extract posts from threads  
 - Evaluate posts per thread  
 - Dump result
 
 *Schematic overview of main processes:*
-![tool_process_v2](https://github.com/ceesvanspaendonck/OSINT-evaluation/assets/10400578/a8702c72-d4bf-4962-9e48-56d97d8535e7)
+![Tekening - Kopie](https://github.com/ceesvanspaendonck/OSINT-evaluation/assets/10400578/7e87ba38-585a-416b-a034-a299da15f206)
 
 Note: the daily limit of search queries on a Programmable Search Engine is fairly limited. Therefore, users that produce no results are now added to a blacklist file (created in local_data) in order to avoid multiple attempts to search for users that produce no results. This approach is still under consideration and might change in the future.  
 ## Prerequisites
@@ -42,7 +42,7 @@ The keys.json file should be constructed as following:
     "open_ai_key": ""  
 }
 ```
-The instructions.txt file should contain the instructions sent to GPT. These instructions *must* mention that the results should be presented in a .json format, due to the type of call that is made and to ensure a computer-readable format of the result. This can (for example) be done by including the following in your instructions.txt file:
+The instructions.txt file should contain the instructions sent to GPT. The instructions can cover any topic, but the research for which the tool was developed focusses on the trustoworthiness of OSINT investigations (the instructions used throughout this research can be found in the thesis). These instructions *must* mention that the results should be presented in a .json format, due to the type of call that is made and to ensure a computer-readable format of the result. This can (for example) be done by including the following in your instructions.txt file:
 ```
 You will output the final result in a JSON object containing the following information:
 {
